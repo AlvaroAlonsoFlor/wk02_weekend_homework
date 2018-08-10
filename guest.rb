@@ -15,7 +15,6 @@ class Guest
 
   def pay(amount)
     @wallet -= amount
-
   end
 
 
