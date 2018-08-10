@@ -1,9 +1,10 @@
 class Karaoke
-  attr_reader(:name, :rooms)
+  attr_reader(:name, :rooms, :fee)
 
-  def initialize(name, rooms)
+  def initialize(name, rooms, fee = 5)
     @name = name
     @rooms = rooms
+    @fee = fee
   end
 
   def check_in(guest, room)
@@ -16,4 +17,11 @@ class Karaoke
     wanted_room = @rooms.find { |item| item == room }
     wanted_room.remove_guest(guest)
   end
+
+  # I am already doing this on the rooms
+  # def add_song_to_room(song, room)
+  #   wanted_room = @rooms.find { |item| item == room }
+  #   wanted_room.add_song(song)
+  #
+  # end
 end

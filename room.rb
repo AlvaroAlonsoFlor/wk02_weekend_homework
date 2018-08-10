@@ -13,7 +13,12 @@ class Room
   end
 
   def add_guest(guest)
-    @guests << guest
+    if is_full? == true
+      "Sorry, the room is full"
+    else
+      @guests << guest
+    end
+
   end
 
   def remove_guest(guest)
