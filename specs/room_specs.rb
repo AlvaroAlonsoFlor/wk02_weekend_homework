@@ -12,15 +12,26 @@ class TestRoom < MiniTest::Test
     @playlist1 = [@song1, @song2]
 
     @guest1 = Guest.new("Jack", 20, "Run to the hills")
+    @guest2 = Guest.new("John", 10, "The Trooper")
 
-    @guess_list = [@guest1]
+    @guest_list = [@guest1, @guest2]
 
-    @room1 = Room.new(1, @playlist, @guest_list, 3)
+    @room1 = Room.new(1, @playlist1, @guest_list, 3)
   end
 
   def test_has_id
-
   assert_equal(1, @room1.id)
+  end
 
+  def test_has_playlist
+    assert_equal(@playlist1, @room1.songs)
+  end
+
+  def test_has_guests
+    assert_equal(@guest_list, @room1.guests)
+  end
+
+  def test_has_room_size
+    assert_equal(3, @room1.room_size)
   end
 end
