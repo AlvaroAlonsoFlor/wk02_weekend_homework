@@ -43,7 +43,7 @@ class TestSong < MiniTest::Test
   end
 
   def test_has_money__no
-
+    assert_equal(false, @guest1.has_money?(25))
   end
 
 
