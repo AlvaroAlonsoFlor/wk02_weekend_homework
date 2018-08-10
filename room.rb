@@ -1,13 +1,13 @@
 class Room
-  attr_reader(:id, :songs, :guests, :room_size)
+  attr_reader(:id, :songs, :guests, :room_size, :revenue)
 
   def initialize(id, songs, guests, room_size)
     @id = id
     @songs = songs
     @guests = guests
     @room_size = room_size
+    @fee = room_size + 3
     @revenue = 0
-    @fee = room_size * 2
   end
 
   def add_song(song)
@@ -15,13 +15,20 @@ class Room
   end
 
   def add_guest(guest)
-    if
-    end
+
     if is_full? == true
-      "Sorry, the room is full"
-    else
-      @guests << guest
+      return "Sorry, the room is full"
     end
+
+    if guest.pay(@fee) == nil
+      return "You don't have enough money to pay for this room"
+    end
+
+    guest.pay(@fee)
+    @revenue += @fee
+    @guests << guest
+
+
 
   end
 
