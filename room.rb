@@ -8,5 +8,13 @@ class Room
     @room_size = room_size
   end
 
-  
+  def add_song(song)
+    @songs.push(song)
+  end
+
+  def add_guest(guest)
+    @guests << guest
+  end
+
+
 end
