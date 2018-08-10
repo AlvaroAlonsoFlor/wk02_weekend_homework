@@ -63,10 +63,6 @@ class TestRoom < MiniTest::Test
     assert_equal(false, @room1.is_full?)
   end
 
-  # def test_play_song
-  #   assert_equal("Now playing Fiesta Pagana", @room1.play_song(@song2))
-  # end
-
 
 
 
