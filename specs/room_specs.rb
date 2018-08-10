@@ -49,6 +49,12 @@ class TestRoom < MiniTest::Test
     assert_equal(3, @room1.guests.count)
   end
 
+  def test_add_guest
+    @room1.add_guest(@guest3)
+    expected = "Sorry, the room is full"
+    assert_equal(expected, @room1.add_guest(@guest4))
+  end
+
   def test_remove_guest
     @room1.remove_guest(@guest1)
     assert_equal(1, @room1.guests.count)
@@ -61,6 +67,11 @@ class TestRoom < MiniTest::Test
 
   def test_is_full__no
     assert_equal(false, @room1.is_full?)
+  end
+
+  def test_customer_has_money?
+    skip
+    assert_equal(true, @guest4.customer_has_money?)
   end
 
 

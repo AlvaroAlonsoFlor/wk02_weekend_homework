@@ -33,5 +33,10 @@ class TestSong < MiniTest::Test
     assert_nil(@guest1.is_favourite_song(@song2))
   end
 
-  
+  def test_pay
+    @guest1.pay(5)
+    assert_equal(15, @guest1.wallet)
+  end
+
+
 end

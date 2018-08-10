@@ -13,7 +13,10 @@ class Guest
     return "Yeah!" if song.name == @favourite_song
   end
 
-  
+  def pay(amount)
+    @wallet -= amount
+
+  end
 
 
 end
