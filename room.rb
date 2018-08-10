@@ -7,6 +7,7 @@ class Room
     @guests = guests
     @room_size = room_size
     @revenue = 0
+    @fee = room_size * 2
   end
 
   def add_song(song)
@@ -14,6 +15,8 @@ class Room
   end
 
   def add_guest(guest)
+    if
+    end
     if is_full? == true
       "Sorry, the room is full"
     else
