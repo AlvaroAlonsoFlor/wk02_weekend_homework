@@ -17,5 +17,9 @@ class Guest
     @wallet -= amount
   end
 
+  def has_money?(amount)
+    return @wallet >= amount
+  end
+
 
 end

@@ -69,10 +69,7 @@ class TestRoom < MiniTest::Test
     assert_equal(false, @room1.is_full?)
   end
 
-  def test_customer_has_money?
-    skip
-    assert_equal(true, @guest4.customer_has_money?)
-  end
+  
 
 
 

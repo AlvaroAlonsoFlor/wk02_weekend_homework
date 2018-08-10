@@ -38,5 +38,13 @@ class TestSong < MiniTest::Test
     assert_equal(15, @guest1.wallet)
   end
 
+  def test_has_money?
+    assert_equal(true, @guest1.has_money?(5))
+  end
+
+  def test_has_money__no
+
+  end
+
 
 end
