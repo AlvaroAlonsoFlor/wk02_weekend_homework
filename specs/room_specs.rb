@@ -9,12 +9,14 @@ class TestRoom < MiniTest::Test
     @song1 = Song.new("Run to the hills")
     @song2 = Song.new("Fiesta Pagana")
     @song3 = Song.new("The Bard Song")
+    @song4 = Song.new("Imagine")
 
     @playlist1 = [@song1, @song2]
 
     @guest1 = Guest.new("Jack", 20, "Run to the hills")
     @guest2 = Guest.new("John", 10, "The Trooper")
     @guest3 = Guest.new("Melinda", 5, "Korsakov")
+    @guest4 = Guest.new("Melody", 30, "Macarena")
 
     @guest_list = [@guest1, @guest2]
 
@@ -51,6 +53,20 @@ class TestRoom < MiniTest::Test
     @room1.remove_guest(@guest1)
     assert_equal(1, @room1.guests.count)
   end
+
+  def test_is_full__yes
+    @room1.add_guest(@guest3)
+    assert_equal(true, @room1.is_full?)
+  end
+
+  def test_is_full__no
+    assert_equal(false, @room1.is_full?)
+  end
+
+  # def test_play_song
+  #   assert_equal("Now playing Fiesta Pagana", @room1.play_song(@song2))
+  # end
+
 
 
 
