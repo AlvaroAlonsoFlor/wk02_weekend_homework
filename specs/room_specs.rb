@@ -20,8 +20,10 @@ class TestRoom < MiniTest::Test
     @guest5 = Guest.new("Richard", 40, "Stairway to Heaven")
 
     @guest_list = [@guest1, @guest2]
+    @guest_list2 = []
 
     @room1 = Room.new(1, @playlist1, @guest_list, 3)
+    @room2 = Room.new(2, @playlist1, @guest_list2, 3)
   end
 
   def test_has_id
@@ -60,6 +62,10 @@ class TestRoom < MiniTest::Test
   def test_add_guest__no_money
     expected = "You don't have enough money to pay for this room"
     assert_equal(expected, @room1.add_guest(@guest3))
+  end
+
+  def test_add_guest__favourite_song
+    assert_equal("Yeah!", @room2.add_guest(@guest1))
   end
 
   def test_remove_guest

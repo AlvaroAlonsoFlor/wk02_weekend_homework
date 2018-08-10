@@ -28,7 +28,7 @@ class Room
     @revenue += @fee
     @guests << guest
 
-
+    @songs.map { |song| return guest.is_favourite_song(song) }
 
   end
 
