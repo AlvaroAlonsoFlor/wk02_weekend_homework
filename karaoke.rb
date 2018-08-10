@@ -5,4 +5,15 @@ class Karaoke
     @name = name
     @rooms = rooms
   end
+
+  def check_in(guest, room)
+    wanted_room = @rooms.find { |item| item == room }
+    wanted_room.add_guest(guest)
+
+  end
+
+  def check_out(guest, room)
+    wanted_room = @rooms.find { |item| item == room }
+    wanted_room.remove_guest(guest)
+  end
 end

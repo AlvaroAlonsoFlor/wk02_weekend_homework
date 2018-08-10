@@ -1,5 +1,6 @@
 require("minitest/autorun")
 require("minitest/rg")
+require("pry")
 require_relative("../karaoke.rb")
 require_relative("../room.rb")
 require_relative("../guest.rb")
@@ -22,9 +23,9 @@ class TestKaraoke < MiniTest::Test
     @guest4 = Guest.new("Melody", 30, "Macarena")
 
     @guest5 = Guest.new("Marta", 30, "God Save the Queen")
-    @guest6 = Guest.new("Melody", 30, "")
-    @guest7 = Guest.new("Melody", 30, "Macarena")
-    @guest8 = Guest.new("Melody", 30, "Macarena")
+    @guest6 = Guest.new("Malfoy", 30, "I'm a man")
+    @guest7 = Guest.new("Michael", 30, "Cualquier dia")
+    @guest8 = Guest.new("Robert", 30, "We are the champions")
 
     @guest_list = [@guest1, @guest2]
     @guest_list2 = [@guest5, @guest6, @guest7]
@@ -46,5 +47,15 @@ class TestKaraoke < MiniTest::Test
 
   def test_has_rooms
     assert_equal(@room_list, @karaoke1.rooms)
+  end
+
+  def test_check_in
+    @karaoke1.check_in(@guest8, @room1)
+    assert_equal(3, @karaoke1.rooms[0].guests.count)
+  end
+
+  def test_check_out
+    @karaoke1.check_out(@guest1, @room1)
+    assert_equal(1, @karaoke1.rooms[0].guests.count)
   end
 end
