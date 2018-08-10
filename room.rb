@@ -1,7 +1,7 @@
 class Room
   attr_reader(:id, :songs, :guests, :room_size)
 
-  def initialize(id, songs, guests, room_size)
+  def initialize(id, songs = [], guests = [], room_size)
     @id = id
     @songs = songs
     @guests = guests
@@ -14,6 +14,10 @@ class Room
 
   def add_guest(guest)
     @guests << guest
+  end
+
+  def remove_guest(guest)
+    @guests.delete(guest)
   end
 
 
