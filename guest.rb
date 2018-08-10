@@ -12,4 +12,8 @@ class Guest
   def is_favourite_song(song)
     return "Yeah!" if song.name == @favourite_song
   end
+
+  
+
+
 end

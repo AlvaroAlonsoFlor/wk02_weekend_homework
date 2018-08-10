@@ -28,4 +28,10 @@ class TestSong < MiniTest::Test
   def test_is_favourite_song
     assert_equal("Yeah!", @guest1.is_favourite_song(@song1))
   end
+
+  def test_is_favourite_song__no
+    assert_nil(@guest1.is_favourite_song(@song2))
+  end
+
+  
 end
