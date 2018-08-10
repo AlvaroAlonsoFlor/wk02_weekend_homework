@@ -14,7 +14,7 @@ class Guest
   end
 
   def pay(amount)
-    @wallet -= amount
+    return @wallet -= amount if has_money?(amount) 
   end
 
   def has_money?(amount)
