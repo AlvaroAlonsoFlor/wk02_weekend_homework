@@ -24,4 +24,5 @@ class TestDrink < MiniTest::Test
     assert_equal(true, @drink2.no_stock?)
   end
 
+
 end

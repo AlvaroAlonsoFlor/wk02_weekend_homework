@@ -1,5 +1,6 @@
 class Drink
-  attr_reader( :name, :price, :stock)
+  attr_reader(:name, :price, :stock)
+  attr_writer(:stock)
 
   def initialize(name, price, stock)
     @name = name
@@ -11,4 +12,5 @@ class Drink
     return true if stock <= 0
     false
   end
+
 end
