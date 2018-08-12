@@ -27,4 +27,7 @@ class TestBar < MiniTest::Test
   def test_has_drinks
     assert_equal(@drinks, @bar.drinks)
   end
+
+  
+
 end

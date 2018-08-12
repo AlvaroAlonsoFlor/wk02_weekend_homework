@@ -20,4 +20,8 @@ class TestDrink < MiniTest::Test
     assert_equal(10, @drink1.stock)
   end
 
+  def test_no_stock__true
+    assert_equal(true, @drink2.no_stock?)
+  end
+
 end

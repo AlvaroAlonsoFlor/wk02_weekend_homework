@@ -6,4 +6,9 @@ class Drink
     @price = price
     @stock = stock
   end
+
+  def no_stock?
+    return true if stock <= 0
+    false
+  end
 end
