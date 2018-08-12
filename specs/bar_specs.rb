@@ -33,7 +33,16 @@ class TestBar < MiniTest::Test
     assert_equal(2, @bar.till)
     assert_equal(18, @guest1.wallet)
     assert_equal(9, @drink1.stock)
+  end
 
+  def test_sell__no_stock
+    expected = "We don't have any Wine left"
+    assert_equal(expected, @bar.sell(@guest1, @drink2))
+  end
+
+  def test_sell__no_money
+    expected = "You don't have money for MegaCocktail"
+    assert_equal(expected, @bar.sell(@guest3, @drink3))
   end
 
 
