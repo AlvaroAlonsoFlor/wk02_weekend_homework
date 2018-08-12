@@ -8,6 +8,8 @@ class Karaoke
   end
 
   def count_total_money
+    room_revenue = @rooms.reduce(0) { |total, room| total + room.revenue }
+    room_revenue + bar.till
   end
 
   # def check_in(guest, room)

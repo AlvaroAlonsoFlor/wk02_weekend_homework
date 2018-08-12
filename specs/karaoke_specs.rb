@@ -63,13 +63,13 @@ class TestKaraoke < MiniTest::Test
     assert_equal(@bar, @karaoke1.bar)
   end
 
-  # def test_count_total_money
-  #   @room1.add_guest(@guest8)
-  #   @bar.sell(@guest8, @drink1)
-  #
-  #   assert_equal(8, @karaoke1.count_total_money)
-  #
-  # end
+  def test_count_total_money
+    @room1.add_guest(@guest8)
+    @bar.sell(@guest8, @drink1)
+
+    assert_equal(8, @karaoke1.count_total_money)
+
+  end
 
   # def test_check_in
   #   @karaoke1.check_in(@guest8, @room1)
