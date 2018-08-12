@@ -12,4 +12,12 @@ class TestDrink < MiniTest::Test
     assert_equal("Beer", @drink1.name)
   end
 
+  def test_has_price
+    assert_equal(2, @drink1.price)
+  end
+
+  def test_has_stock
+    assert_equal(10, @drink1.stock)
+  end
+
 end
