@@ -1,9 +1,13 @@
 class Karaoke
-  attr_reader(:name, :rooms, :fee)
+  attr_reader(:name, :rooms, :bar )
 
-  def initialize(name, rooms)
+  def initialize(name, rooms, bar)
     @name = name
     @rooms = rooms
+    @bar = bar
+  end
+
+  def count_total_money
   end
 
   # def check_in(guest, room)

@@ -5,6 +5,8 @@ require_relative("../karaoke.rb")
 require_relative("../room.rb")
 require_relative("../guest.rb")
 require_relative("../song.rb")
+require_relative("../drink.rb")
+require_relative("../bar.rb")
 
 class TestKaraoke < MiniTest::Test
   def setup
@@ -36,7 +38,15 @@ class TestKaraoke < MiniTest::Test
 
     @room_list = [@room1, @room2, @room3]
 
-    @karaoke1 = Karaoke.new("CodeClanCaraoke", @room_list)
+    @drink1 = Drink.new("Beer", 2, 10)
+    @drink2 = Drink.new("Wine", 5, 5)
+    @drink3 = Drink.new("MegaCocktail", 20, 2)
+
+    @drinks = [@drink1, @drink2, @drink3]
+
+    @bar = Bar.new(0, @drinks)
+
+    @karaoke1 = Karaoke.new("CodeClanCaraoke", @room_list, @bar)
 
 
   end
@@ -48,6 +58,18 @@ class TestKaraoke < MiniTest::Test
   def test_has_rooms
     assert_equal(@room_list, @karaoke1.rooms)
   end
+
+  def test_has_bar
+    assert_equal(@bar, @karaoke1.bar)
+  end
+
+  # def test_count_total_money
+  #   @room1.add_guest(@guest8)
+  #   @bar.sell(@guest8, @drink1)
+  #
+  #   assert_equal(8, @karaoke1.count_total_money)
+  #
+  # end
 
   # def test_check_in
   #   @karaoke1.check_in(@guest8, @room1)
