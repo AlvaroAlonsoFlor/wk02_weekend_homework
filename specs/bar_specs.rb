@@ -21,8 +21,10 @@ class TestBar < MiniTest::Test
   end
 
   def test_has_till
+    assert_equal(0, @bar.till)
   end
 
-  def test_has_stock
+  def test_has_drinks
+    assert_equal(@drinks, @bar.drinks)
   end
 end
